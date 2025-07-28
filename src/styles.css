@@ -1,0 +1,175 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  /* background-color: rebeccapurple; */
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: min-content auto 1fr;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  
+}
+
+* {
+  /* border: solid 1px black; */
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+header {
+  grid-column: 1 / 3;
+  border-bottom: solid 3px gray;
+  padding:10px 10px 5px 10px;
+}
+
+#filters {
+  grid-column: 1/2;
+  grid-row: 2/-1;
+  border-right: solid 3px gray;
+  padding: 5px 0px 10px 10px;
+}
+
+#task-panel {
+  grid-column: 2/3;
+  grid-row: 2;
+  margin-left: 5px;
+  padding: 5px 10px 10px 0px;
+}
+
+.task{
+  display: flex;
+  border-bottom: solid 1px gray;
+  margin-bottom: 15px;
+}
+
+.task-info {
+  display: grid;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  grid-template-rows: repeat(3, 1fr);
+  flex-grow: 1;
+}
+
+.task-name {
+  font-size: 1.1em;
+  grid-column: 1/4;
+  grid-row:1/2;
+}
+
+.task-desc {
+  font-size: .8em;
+  grid-row: 2/3;
+  grid-column: 1/4;
+}
+
+.task-project,
+.task-priority,
+.task-duedate {
+  font-size: .8em;
+}
+
+.task-project,
+.task-priority,
+.task-duedate {
+  grid-row: 3/4;
+}
+
+.task-project,
+.task-priority {
+  border-right: solid 1px gray;
+}
+
+.task-priority,
+.task-duedate {
+  text-align: center;
+}
+
+.task-buttons {
+  align-content: center;
+}
+
+#popup-container,
+#project-popup-container {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 80px;
+  transform: translate(-50%);
+  background-color: white;
+  padding: 10px;
+}
+
+#input-form-container,
+#project-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#input-button-container,
+#project-form-button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+#greyBackgroundOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#new-task-button{
+  height: 40px;
+}
+
+/* .icon {
+  width: 20px;
+} */
+
+.task-edit-button {
+  background-image: url("./pencil.svg");
+  background-repeat: no-repeat;
+}
+
+.task-edit-button:hover,
+.project-delete-button:hover,
+#task-delete-button:hover {
+  background-color: grey;
+}
+
+.task-edit-button:active,
+.project-delete-button:active,
+#task-delete-button:active {
+  background-color: red;
+}
+
+.project-delete-button,
+#task-delete-button {
+  margin-left: 5px;
+  background-image: url("./delete.svg");
+  background-repeat: no-repeat;
+}
+
+.project-delete-button,
+#task-delete-button,
+.task-edit-button {
+  height: 25px;
+  width: 25px;
+  /* aspect-ratio: 1; */
+  /* padding: 0px 2px; */
+  background-color: white;
+  border: none;
+  background-size: 25px;
+  background-position: center;
+}
+
+#project-filter {
+  margin-bottom: 5px;
+}
