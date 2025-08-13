@@ -1,6 +1,26 @@
 * {
-  /* border: solid 1px black; */
+  border: solid 1px black;
   margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
   font-family: sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+ol {
+  list-style-type: none;
+  display: flex;
+}
+
+#carousel-container {
+  width: 300%;
+}
+
+li {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
