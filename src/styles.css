@@ -6,8 +6,10 @@
   font-family: sans-serif;
 }
 
-body {
+#carousel-section-container {
+  width: 100%;
   overflow-x: hidden;
+  position: absolute;
 }
 
 ol {
@@ -17,10 +19,26 @@ ol {
 
 #carousel-container {
   width: 300%;
+  position: relative;
+  top: 0;
 }
 
 li {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+#button-container {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  padding: 0 10px;
+  top:50%;
+  transform: translateY(-50%);
+}
+
+button {
+  height: 40px;
 }
