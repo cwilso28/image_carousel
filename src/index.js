@@ -10,7 +10,6 @@ class carouselManager {
         this.line_item_count = this.line_items.length;
         this.image_index = 0;
         this.position = 0;
-        console.log(this.line_items)
     };
 
     carouselForward() {
@@ -38,15 +37,25 @@ class carouselManager {
         this.ordered_list.style.left = this.position + "%";
     }
 
+    carouselNavigatorUpdate() {
+        let button_number = this.image_index + 1;
+        let button_name = "image_" + button_number;
+        let button = document.querySelector(`input[id="${button_name}"]`);
+
+        button.checked = "true";
+    }
+
     setButtonFunction() {
         let right_arrow = document.getElementById("right-arrow");
         right_arrow.addEventListener("click", (e) => {
             this.carouselForward();
+            this.carouselNavigatorUpdate();
         })
 
         let left_arrow = document.getElementById("left-arrow");
         left_arrow.addEventListener("click", (e) => {
             this.carouselBackward();
+            this.carouselNavigatorUpdate();
         })
     }
 
