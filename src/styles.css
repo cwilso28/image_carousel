@@ -1,5 +1,5 @@
 * {
-  border: solid 1px black;
+  /* border: solid 1px black; */
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
@@ -42,7 +42,15 @@ li {
 }
 
 button {
-  height: 40px;
+  border: none;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: rgba(180, 180, 180, 0.75);
+}
+
+button:active {
+  background-color: rgba(141, 141, 141, 0.75);
 }
 
 #dot-bar-container {
@@ -52,6 +60,8 @@ button {
   position: absolute;
   bottom: 20px;
   justify-self: center;
+  background-color: rgba(128, 128, 128, 0.75);
+  border-radius: 70px;
 }
 
 /* Hide the default buttons */
@@ -70,11 +80,23 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked {
-  background-color: red;
+  background-color: rgb(90, 90, 90);
   height: 12px;
   width: 12px;
 }
 ul {
   gap:5px;
   align-items: center;
+}
+
+#left-arrow {
+  background-image: url("./arrow_back_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#right-arrow {
+  background-image: url("./arrow_forward_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
