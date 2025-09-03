@@ -16,9 +16,14 @@ class carouselManager {
         if (this.image_index < this.line_item_count - 1) {
             this.image_index += 1;
             this.position -= 100;
+        }
 
-            this.ordered_list.style.left = this.position + "%";
-        };
+        else {
+            this.image_index = 0;
+            this.position = 0;
+        }
+
+        this.ordered_list.style.left = this.position + "%";
     }
 
     carouselBackward() {
@@ -26,9 +31,17 @@ class carouselManager {
             this.image_index -= 1;
             this.position += 100;
 
-            this.ordered_list.style.left = this.position + "%";
+            
         }
+
+        else {
+            this.image_index = this.line_item_count - 1;
+            this.position = this.image_index * -100
+        }
+
+        this.ordered_list.style.left = this.position + "%";
     }
+
 
     carouselAbsolute(index) {
         this.image_index = index;
