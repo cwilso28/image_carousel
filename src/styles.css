@@ -27,8 +27,19 @@ ul {
 
 li {
   width: 100%;
-  display: flex;
   justify-content: center;
+}
+
+ol > li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position:relative;
+}
+
+#dot-bar-container > li {
+  display: flex;
 }
 
 #button-container {
