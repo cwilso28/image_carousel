@@ -10,7 +10,7 @@ class carouselManager {
         this.line_item_count = this.line_items.length;
         this.image_index = 0;
         this.position = 0;
-        this.startTimer();
+        this.internalTimer = this.startTimer();
     };
 
     carouselForward() {
@@ -73,11 +73,13 @@ class carouselManager {
         let right_arrow = document.getElementById("right-arrow");
         right_arrow.addEventListener("click", (e) => {
             this.carouselForwardManager();
+            this.resetTimer();
         })
 
         let left_arrow = document.getElementById("left-arrow");
         left_arrow.addEventListener("click", (e) => {
             this.carouselBackwardManager();
+            this.resetTimer();
         })
     }
 
@@ -92,11 +94,18 @@ class carouselManager {
             let id_check = document.querySelector('input[name="carousel"]:checked').id;
             let index = this.parseRadioName(id_check) - 1;
             this.carouselAbsolute(index);
+            this.resetTimer();
         });
     }
 
     startTimer() {
-        setInterval(this.carouselForwardManager.bind(this),5000);
+        let internalTimer = setInterval(this.carouselForwardManager.bind(this),5000);
+        return internalTimer;
+    }
+
+    resetTimer() {
+        clearInterval(this.internalTimer);
+        this.internalTimer = setInterval(this.carouselForwardManager.bind(this),5000);
     }
 }
 // Adjust highlighted button as image carousel rotates or is rotated
